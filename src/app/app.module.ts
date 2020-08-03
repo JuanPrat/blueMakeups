@@ -3,14 +3,28 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { EncabezadoComponent } from './components/encabezado/encabezado.component';
+import { HomeComponent } from './components/home/home.component';
+import { ShopCartComponent } from './components/shop-cart/shop-cart.component';
+import { ItemViewComponent } from './components/item-view/item-view.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EncabezadoComponent,
+    HomeComponent,
+    ShopCartComponent,
+    ItemViewComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    AccordionModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
