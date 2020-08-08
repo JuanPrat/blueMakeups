@@ -1,17 +1,22 @@
-<div class="jumbotron">
-    <h1>Hello, world!</h1>
-    <p>...</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-</div>
-
-<div class="container containerItems ">
-    <div class="card" style="width: 18rem;">
-        <img src="https://imgs-akamai.mnstatic.com/d4/96/d496de83232608f414e8d1984f09b9e5.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary" >Ver Producto</a>
-        <a href="#" class="btn btn-primary" (click)="agregarAlCarrito()">Añadir al carrito</a>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Artesianias Web</h1>
+      <p class="lead"><strong> todos los articulos necesarios para que tu hogar se vea rustico y hogarenno</strong></p>
+    </div>
+  </div>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let producto of productos">
+            <div  class="card" style="width: 18rem;" >
+                <img src="{{producto.imgUrl}}" class="card-img-top" >
+                <div class="card-body">
+                <h5 class="card-title">{{producto.nombre}}</h5>
+                <p class="card-text">{{producto.descripcion}}</p>
+                <h5 class="card-title">{{producto.precio}}</h5>
+                <button class="btn btn-primary" (click)="verDetalle(producto)">Ver Producto</button>
+                <button class="btn btn-success" (click)="agregarAlCarrito(producto)" >Añadir al carrito</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

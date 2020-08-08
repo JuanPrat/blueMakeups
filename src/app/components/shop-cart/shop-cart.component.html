@@ -1,1 +1,25 @@
-<p>shop-cart works!</p>
+
+<h1>Carrito de compras</h1>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Total</th>
+            <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let producto of carrito; let index = index">
+        <tr>
+            <th scope="row">{{index}}</th>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.precio}}</td>
+            <td>{{250000}}</td>
+            <td><button type="button" class="close" aria-label="Close"></button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

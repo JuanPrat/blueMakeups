@@ -1,1 +1,16 @@
-<p>item-view works!</p>
+    <div class="container">
+        <diV class="itemView">
+            <img src="{{productoDetalle.imgUrl}}">
+            <div class="descripcion">
+                <p><strong>Producto: </strong>{{productoDetalle.nombre}}</p>
+                <p>{{productoDetalle.descripcion}}</p>
+                <p><strong>Precio: </strong>{{productoDetalle.precio}}</p>
+                <p><strong>Materiales:</strong></p>
+                <li *ngFor="let material of productoDetalle.materiales">{{material}}</li>
+                <br>
+                <button class="btn btn-success">Añadir al carrito</button>
+            </div>
+        </diV>
+        
+    </div>
+

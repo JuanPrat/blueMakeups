@@ -5,9 +5,9 @@ import { ShopCartComponent } from './components/shop-cart/shop-cart.component';
 import { ItemViewComponent } from './components/item-view/item-view.component';
 
 const routes: Routes = [
-  {path:"home", component:HomeComponent},
+  {path:"", component:HomeComponent},
   {path:"shopCart", component:ShopCartComponent},
-  {path:"itemView/:idItem", component:ItemViewComponent}
+  {path:"itemView", component:ItemViewComponent}
 ];
 
 @NgModule({

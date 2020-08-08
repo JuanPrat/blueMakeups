@@ -9,22 +9,16 @@ export class FirebaseService {
 
   constructor(private db:AngularFirestore) { }
 
-  agregarProductoCarrito(){
-    this.db.collection('carritoDeCompras').add({
-      nombre: 'Juan Jose',
-      cargo: 'Desarrollador web Angular'
-    });
+  agregarProductoCarrito(producto:producto){
+    this.db.collection('carritoDeCompras').add(producto);
   }
 
-  leerProductos():Array<producto>{
-    let productosList =  new Array();
-    this.db.collection('productos').valueChanges()
-    .subscribe((productos)=>{
-      productosList = productos
-      debugger
-    });
-    debugger
-    return new Array();
+  leerProductos(){
+    return this.db.collection('productos').valueChanges();
+  }
+
+  buscarCarritoCompra(){
+    return this.db.collection('carritoDeCompras').valueChanges();
   }
 }
 
