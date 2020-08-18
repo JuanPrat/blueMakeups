@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-encabezado',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./encabezado.component.scss']
 })
 export class EncabezadoComponent implements OnInit {
-
-  constructor() { }
+  @ViewChild('nombreUsuario', {static: true}) nombreUsuarioLogin:ElementRef;
+  @ViewChild('imgUsuario', {static: true}) imgUsuario:ElementRef;
+  
+  constructor(private firebaseServ:FirebaseService) { }
 
   ngOnInit(): void {
+    
   }
 
+  loguear(){
+    this.firebaseServ.logueo().then((result) => {
+      document.getElementById("usrImg").style.display = "inline";  
+      var user = result.user;
+      this.nombreUsuarioLogin.nativeElement.innerText = user.displayName;
+      this.imgUsuario.nativeElement.src = user.photoURL
+      this.firebaseServ.userUid = user.uid;
+      
+    }).catch(error =>console.log(error));
+  }
 }

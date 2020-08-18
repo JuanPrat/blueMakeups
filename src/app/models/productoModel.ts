@@ -5,6 +5,7 @@ export class producto{
     descripcion:string;
     materiales:string;
     imgUrl:string;
+    cantidadEnCarrito:number;
 
     constructor(){
         this.id = this.id;
@@ -13,5 +14,6 @@ export class producto{
         this.nombre = this.nombre;
         this.materiales = this.materiales;
         this.imgUrl = this.imgUrl;
+        this.cantidadEnCarrito = 0;
     }
 }

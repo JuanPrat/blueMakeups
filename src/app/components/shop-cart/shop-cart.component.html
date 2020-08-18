@@ -1,25 +1,30 @@
-
 <h1>Carrito de compras</h1>
 <div class="container">
     <table class="table table-striped">
         <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Producto</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Total</th>
-            <th scope="col">Acciones</th>
-        </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Total</th>
+                <th scope="col">Acciones</th>
+            </tr>
         </thead>
-        <tbody *ngFor="let producto of carrito; let index = index">
-        <tr>
-            <th scope="row">{{index}}</th>
-            <td>{{producto.nombre}}</td>
-            <td>{{producto.precio}}</td>
-            <td>{{250000}}</td>
-            <td><button type="button" class="close" aria-label="Close"></button></td>
-        </tr>
+        <tbody *ngFor="let producto of carrito.listaProductos; let index = index">
+            <tr>
+                <th scope="row">{{index}}</th>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.precio}}</td>
+                <td>
+                    <button class="btn btn-secondary" (click)="disminuirCantidad(producto)">-</button>
+                    <input type="text" class="producto-cantidad" value="{{producto.cantidadEnCarrito}}">
+                    <button class="btn btn-secondary" (click)="aumentarCantidad(producto)">+</button>
+                </td>
+                <td>{{producto.precio * producto.cantidadEnCarrito}}</td>
+                <td><button type="btn btn-primary" class="close" aria-label="Close"></button></td>
+            </tr>
         </tbody>
     </table>
+    <button class="btn btn-success">Comprar</button>
 </div>

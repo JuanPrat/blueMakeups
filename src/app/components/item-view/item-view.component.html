@@ -8,7 +8,7 @@
                 <p><strong>Materiales:</strong></p>
                 <li *ngFor="let material of productoDetalle.materiales">{{material}}</li>
                 <br>
-                <button class="btn btn-success">Añadir al carrito</button>
+                <button class="btn btn-success" (click)="agregarAlCarrito()">Añadir al carrito</button>
             </div>
         </diV>
         
