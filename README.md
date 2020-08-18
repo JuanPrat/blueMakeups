@@ -1,7 +1,7 @@
 
-# ArtesaniasWeb
+# Blue Makeups
 
-Un proyecto de una tienda de venta de artesanias con firebase integrado como base de datos
+Un proyecto de una tienda de venta de maquillaje con firebase integrado como base de datos
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
 
 ## Development server
