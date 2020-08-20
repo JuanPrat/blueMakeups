@@ -5,8 +5,6 @@
                 <p><strong>Producto: </strong>{{productoDetalle.nombre}}</p>
                 <p>{{productoDetalle.descripcion}}</p>
                 <p><strong>Precio: </strong>{{productoDetalle.precio}}</p>
-                <p><strong>Materiales:</strong></p>
-                <li *ngFor="let material of productoDetalle.materiales">{{material}}</li>
                 <br>
                 <button class="btn btn-success" (click)="agregarAlCarrito()">Añadir al carrito</button>
             </div>

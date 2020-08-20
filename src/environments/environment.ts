@@ -5,13 +5,14 @@
 export const environment = {
   production: false,
   firebase:{
-    apiKey: "AIzaSyBgZ8sRrVZKsVAmbNRjWSG28bAW2eeR5yA",
-    authDomain: "artesaniasweb-2160f.firebaseapp.com",
-    databaseURL: "https://artesaniasweb-2160f.firebaseio.com",
-    projectId: "artesaniasweb-2160f",
-    storageBucket: "artesaniasweb-2160f.appspot.com",
-    messagingSenderId: "586592256496",
-    appId: "1:586592256496:web:fba2e7a9e021a9e6f99d35"
+    apiKey: "AIzaSyCTcSDldp63ilUo8dgPGCAox7C1328agdk",
+    authDomain: "bluemakeups-e2a4a.firebaseapp.com",
+    databaseURL: "https://bluemakeups-e2a4a.firebaseio.com",
+    projectId: "bluemakeups-e2a4a",
+    storageBucket: "bluemakeups-e2a4a.appspot.com",
+    messagingSenderId: "1092006730654",
+    appId: "1:1092006730654:web:d309117708db8ff2dd148f",
+    measurementId: "G-ESR6E9XFLF"
   }
 };
 

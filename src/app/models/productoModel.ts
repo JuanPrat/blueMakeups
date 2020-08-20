@@ -3,7 +3,6 @@ export class producto{
     nombre: string;
     precio: number;
     descripcion:string;
-    materiales:string;
     imgUrl:string;
     cantidadEnCarrito:number;
 
@@ -12,7 +11,6 @@ export class producto{
         this.descripcion = this.descripcion;
         this.precio = this.precio;
         this.nombre = this.nombre;
-        this.materiales = this.materiales;
         this.imgUrl = this.imgUrl;
         this.cantidadEnCarrito = 0;
     }
