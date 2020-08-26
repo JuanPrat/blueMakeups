@@ -11,13 +11,15 @@ import { EncabezadoComponent } from './components/encabezado/encabezado.componen
 import { HomeComponent } from './components/home/home.component';
 import { ShopCartComponent } from './components/shop-cart/shop-cart.component';
 import { ItemViewComponent } from './components/item-view/item-view.component';
+import { PedidosComponent } from './components/pedidos/pedidos.component';
 @NgModule({
   declarations: [
     AppComponent,
     EncabezadoComponent,
     HomeComponent,
     ShopCartComponent,
-    ItemViewComponent
+    ItemViewComponent,
+    PedidosComponent
   ],
   imports: [
     BrowserModule,

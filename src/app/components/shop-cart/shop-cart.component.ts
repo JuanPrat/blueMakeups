@@ -32,4 +32,8 @@ export class ShopCartComponent implements OnInit {
     this.localStorage.removerDelCarrito(producto);
   }
 
+  ordenarPedido(){
+    this.firebaseService.ordenarPedido(this.carrito);
+  }
+
 }

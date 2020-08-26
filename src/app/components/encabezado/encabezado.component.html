@@ -1,12 +1,13 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#" routerLink="/">Blue Makeups</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#links" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id=" navbarNavAltMarkup">
+    <div class="collapse navbar-collapse" id="links">
       <div class="navbar-nav">
-        <a class="nav-item nav-link"  routerLink="/shopCart">Carrito</a>
         <a class="nav-item nav-link"  (click)="loguear()" >Iniciar sesion</a>
+        <a class="nav-item nav-link"  routerLink="/shopCart">Carrito</a>
+        <a class="nav-item nav-link"  routerLink="/pedidos">Pedidos</a>
         <a class="nav-item nav-link disabled" #nombreUsuario></a>
         <img #imgUsuario class="googleAuthImg" id="usrImg">
       </div>
