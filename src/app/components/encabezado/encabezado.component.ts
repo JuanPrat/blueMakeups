@@ -23,7 +23,7 @@ export class EncabezadoComponent implements OnInit {
       this.nombreUsuarioLogin.nativeElement.innerText = user.displayName;
       this.imgUsuario.nativeElement.src = user.photoURL
       this.firebaseServ.userUid = user.uid;
-      
+      this.firebaseServ.nombreUsuarioLogin = user.displayName;
     }).catch(error =>console.log(error));
   }
 }

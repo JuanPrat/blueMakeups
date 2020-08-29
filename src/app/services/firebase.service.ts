@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {carritoCompra} from '../models/carritoCompraModel'
+import {pedido} from '../models/pedido';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase';
 import Swal from 'sweetalert2';
@@ -29,7 +30,6 @@ export class FirebaseService {
   }
   
   buscarCarritoCompra(){
-    debugger
     return this.db.collection('carritoDeCompra').doc(this.userUid).valueChanges();
   }
 
@@ -44,8 +44,15 @@ export class FirebaseService {
     return firebase.auth().signInWithPopup(provider);
   }
 
-  ordenarPedido(carrito:carritoCompra){
-    this.db.collection('pedidos').add({carrito}).then(result => {
+  ordenarPedido(carrito:carritoCompra, direccion:string, celular:string){
+    let pedido:pedido = {
+      carrito: carrito, 
+      direccion: direccion,
+      celular: celular,
+      cliente: this.nombreUsuarioLogin
+    }
+    debugger
+    this.db.collection('pedidos').add({pedido}).then(result => {
       Swal.fire('Pedido enviado exitosamente. BlueMakeups se pondrá en contacto contigo');
     });
     localStorage.removeItem('carrito');

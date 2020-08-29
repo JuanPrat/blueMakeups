@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ShopCartComponent } from './components/shop-cart/shop-cart.component';
 import { ItemViewComponent } from './components/item-view/item-view.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { PedidosComponent } from './components/pedidos/pedidos.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     AccordionModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],

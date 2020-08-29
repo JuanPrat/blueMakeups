@@ -3,6 +3,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 import { carritoCompra } from 'src/app/models/carritoCompraModel';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { producto } from 'src/app/models/productoModel';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -12,16 +13,27 @@ import { producto } from 'src/app/models/productoModel';
 })
 export class ShopCartComponent implements OnInit {
   carrito:carritoCompra = new carritoCompra();
+  formulario:FormGroup;
   done = false;
 
-  constructor(private firebaseService:FirebaseService, private localStorage:LocalStorageService) { }
+  constructor(private firebaseService:FirebaseService,
+     private localStorage:LocalStorageService,
+     private fb:FormBuilder) { }
   
   ngOnInit(): void {
-    //this.carrito = JSON.parse(localStorage.getItem('carrito'));
+    this.formularioModal();
     this.firebaseService.buscarCarritoCompra()
     .subscribe((productosEnCarrito:carritoCompra) => {
+      debugger
         this.carrito = productosEnCarrito;
-      });
+      });      
+  }
+
+  formularioModal(){
+    this.formulario = this.fb.group({
+      direccion:['', Validators.required],
+      celular:['', Validators.required]
+    })
   }
 
   aumentarCantidad(producto:producto){
@@ -33,7 +45,9 @@ export class ShopCartComponent implements OnInit {
   }
 
   ordenarPedido(){
-    this.firebaseService.ordenarPedido(this.carrito);
+    debugger
+    const direccion = this.formulario.controls['direccion'].value;
+    const celular = this.formulario.controls['celular'].value
+    this.firebaseService.ordenarPedido(this.carrito, direccion, celular );
   }
-
 }
