@@ -4,6 +4,7 @@ import {pedido} from '../models/pedido';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase';
 import Swal from 'sweetalert2';
+import { productoBD } from '../models/agregarProductoModel';
 
 @Injectable({
   providedIn: 'root'
@@ -60,6 +61,14 @@ export class FirebaseService {
     });
     localStorage.removeItem('carrito');
     this.db.collection('carritoDeCompra').doc(this.userUid).delete();
+  }
+
+  storeImg(file:File):firebase.storage.UploadTask{
+    return firebase.storage().ref().child('Productos/'+file.name).put(file);
+  }
+
+  agregarProducto(producto: productoBD){
+    debugger
   }
 }
 

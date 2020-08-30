@@ -13,6 +13,7 @@ import { ShopCartComponent } from './components/shop-cart/shop-cart.component';
 import { ItemViewComponent } from './components/item-view/item-view.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AgregarProductosComponent } from './components/agregar-productos/agregar-productos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     ShopCartComponent,
     ItemViewComponent,
-    PedidosComponent
+    PedidosComponent,
+    AgregarProductosComponent
   ],
   imports: [
     BrowserModule,

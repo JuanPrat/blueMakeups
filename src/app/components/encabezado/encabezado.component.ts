@@ -28,6 +28,7 @@ export class EncabezadoComponent implements OnInit {
       document.getElementById("login").style.display = "none";
       if(result.additionalUserInfo.profile.email == "drea15na@gmail.com" || result.additionalUserInfo.profile.email == "juanprat96@gmail.com" ){
         document.getElementById("pedidos").style.display = "inline";
+        document.getElementById("agregar").style.display = "inline";
       }
     }).catch(error =>console.log(error));
   }

@@ -1,0 +1,27 @@
+<div class="container cont">
+    <form [formGroup]="formulario" class="form-group">
+        <div class="row">
+            <div class="col-sm-6 blue">
+                <input type="file" id="inpt-img" formControlName="imagen" onclick="cargarimg()" multiple>
+            </div>
+            <div class="col-sm-6 pink">
+                <input class="form-control" type="text" formControlName="nombre" placeholder="nombre del producto">
+                <input class="form-control" type="text" formControlName="precio" placeholder="precio del producto">
+                <textarea placeholder="descripcion del producto" formControlName="descripcion"></textarea>
+            </div>
+        </div>
+        <button class="btn btn-primary" (click)="agregarProducto()">Agregar</button>
+    </form>
+    
+</div>
+
+<script>
+    function cargarImg(){
+        debugger
+        let image = document.createElement("img");
+        let imageParent = document.getElementById("blue");
+        image.id = "id";
+        image.src = document.getElementById("inpt-img").value;
+        imageParent.appendChild(image);
+    }
+</script>
