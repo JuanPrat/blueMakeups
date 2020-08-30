@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { carritoCompra } from 'src/app/models/carritoCompraModel';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { pedido } from 'src/app/models/pedido';
 
 @Component({
   selector: 'app-pedidos',
@@ -8,7 +9,8 @@ import { FirebaseService } from 'src/app/services/firebase.service';
   styleUrls: ['./pedidos.component.scss']
 })
 export class PedidosComponent implements OnInit {
-  pedidos:Array<carritoCompra>;
+  public pedidos;
+  public done:boolean = false;
 
   constructor(private firebase: FirebaseService) { }
 
@@ -18,7 +20,16 @@ export class PedidosComponent implements OnInit {
 
   private obtenerPedidos(){
     this.firebase.leerPedidos()
-    .subscribe((resp:Array<carritoCompra>) => this.pedidos = resp);
+    .subscribe((resp:Array<pedido>) =>{
+       this.pedidos = resp;
+       this.done = true;
+       console.log(this.pedidos)
+      });
   }
+
+  despacharPedido(pedido:pedido){
+    debugger
+  }
+
 
 }

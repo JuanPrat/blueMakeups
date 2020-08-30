@@ -1,17 +1,27 @@
-<div class="container">
+<div class="container pedidos">
     <h1>Tus pedidos pendientes</h1>
-    <div class="container pedidos">
-        <!--<div class="card" *ngFor="let pedido of pedidos">
-            <div  class="card" style="width: 18rem;" >
-                <img src="{{pedido.}}" class="card-img-top" >
-                <div class="card-body">
-                <h5 class="card-title">{{pedido.nombre}}</h5>
-                <p class="card-text">{{pedido.descripcion}}</p>
-                <h5 class="card-title">{{pedido.precio}}</h5>
-                <button class="btn btn-primary" (click)="verDetalle(producto)">Ver Producto</button>
-                <button class="btn btn-success" (click)="agregarAlCarrito(producto)" >Añadir al carrito</button>
-                </div>
-            </div>-->
+    <div class="container">
+        <div *ngFor="let pedido of pedidos">
+            <div class="pedido">
+                <h3>{{pedido.pedido.cliente}}</h3>
+                <h5>{{pedido.pedido.direccion}}</h5>
+                <h5>{{pedido.pedido.celular}}</h5>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let producto of pedido.pedido.carrito.listaProductos">
+                        <tr>
+                            <td>{{producto.nombre}}</td>
+                            <td>{{producto.cantidadEnCarrito}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-primary" (click)="despacharPedido(pedido.pedido)">Despachar</button>
+            </div>
         </div>
     </div>
-
+</div>

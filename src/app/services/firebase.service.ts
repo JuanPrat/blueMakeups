@@ -51,7 +51,6 @@ export class FirebaseService {
       celular: celular,
       cliente: this.nombreUsuarioLogin
     }
-    debugger
     this.db.collection('pedidos').add({pedido}).then(result => {
       Swal.fire('Pedido enviado exitosamente. BlueMakeups se pondrá en contacto contigo');
     });
