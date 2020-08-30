@@ -18,7 +18,6 @@ export class FirebaseService {
   }
 
   guardarCarrito(carritoLocalStorage:carritoCompra){
-    debugger
         this.db.collection('carritoDeCompra').doc(this.userUid).set({
           clienteId: this.userUid,
           listaProductos: carritoLocalStorage.listaProductos
@@ -34,7 +33,11 @@ export class FirebaseService {
   }
 
   leerPedidos(){
-    return this.db.collection('pedidos').valueChanges();
+    return this.db.collection('pedidos').valueChanges({idField: "idDocument"});
+  }
+
+  despacharPedido(pedido){
+    return this.db.collection('pedidos').doc(pedido.idDocument).delete();
   }
 
   logueo():Promise<firebase.auth.UserCredential>{
@@ -45,6 +48,7 @@ export class FirebaseService {
   }
 
   ordenarPedido(carrito:carritoCompra, direccion:string, celular:string){
+   
     let pedido:pedido = {
       carrito: carrito, 
       direccion: direccion,

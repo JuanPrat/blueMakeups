@@ -5,9 +5,9 @@
     </button>
     <div class="collapse navbar-collapse" id="links">
       <div class="navbar-nav">
-        <a class="nav-item nav-link"  (click)="loguear()" >Iniciar sesion</a>
+        <a class="nav-item nav-link" id="login" (click)="loguear()" >Iniciar sesion</a>
         <a class="nav-item nav-link"  routerLink="/shopCart">Carrito</a>
-        <a class="nav-item nav-link"  routerLink="/pedidos">Pedidos</a>
+        <a class="nav-item nav-link" id="pedidos" routerLink="/pedidos">Pedidos</a>
         <a class="nav-item nav-link disabled" #nombreUsuario></a>
         <img #imgUsuario class="googleAuthImg" id="usrImg">
       </div>

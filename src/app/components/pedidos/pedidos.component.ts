@@ -20,15 +20,16 @@ export class PedidosComponent implements OnInit {
 
   private obtenerPedidos(){
     this.firebase.leerPedidos()
-    .subscribe((resp:Array<pedido>) =>{
+    .subscribe((resp) =>{
+      debugger
        this.pedidos = resp;
        this.done = true;
        console.log(this.pedidos)
       });
   }
 
-  despacharPedido(pedido:pedido){
-    debugger
+  despacharPedido(pedido){
+    this.firebase.despacharPedido(pedido);
   }
 
 
