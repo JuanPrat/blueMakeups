@@ -11,3 +11,14 @@ h1{
     margin-right: 20px;
     margin-left: 20px;
 }
+
+#page-container {
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;  
+}
+
+h1 {
+    margin-left: 44%;
+}

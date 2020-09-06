@@ -15,3 +15,16 @@
 .cont{
     margin-top: 50px;
 }
+
+#page-container {
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;  
+}
+
+button {
+    margin-left: 43.2%;
+    margin-top: 25px;
+    width: 150px;
+}

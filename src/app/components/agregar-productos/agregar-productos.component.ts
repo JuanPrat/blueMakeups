@@ -17,18 +17,21 @@ export class AgregarProductosComponent implements OnInit {
   }
 
   agregarProducto() {
-    this.firebase.storeImg(document.getElementById("inpt-img").files[0])
-      .then(uploaded => {
-        debugger
-        this.firebase.agregarProducto({
-          descripcion: this.formulario.controls["descripcion"].value,
-          imgUrl: "https://firebasestorage.googleapis.com/v0/b/bluemakeups-e2a4a.appspot.com/o/Productos%2F" + this.formulario.controls["imagen"] + "?alt=media&token=a36b3855-5b7b-445c-a056-ea1a2646cf4b",
-          nombre: this.formulario.controls["nombre"].value,
-          id: "1",
-          precio: this.formulario["precio"].value
-        })
+    let files:any = document.getElementById("inpt-img");
+    this.firebase.storeImg(files.files[0])
+      .then(() => {
+        this.firebase.getImg(files.files[0]).then(imgurl => {
+          debugger
+          this.firebase.agregarProducto({
+            descripcion: this.formulario.controls["descripcion"].value,
+            imgUrl: imgurl,
+            nombre: this.formulario.controls["nombre"].value,
+            id: "1",
+            precio: this.formulario.controls["precio"].value
+          })
+        }
+        );
       });
-
   }
 
   crearFormulario() {

@@ -8,6 +8,7 @@ import { AgregarProductosComponent } from './components/agregar-productos/agrega
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
+  {path:"home", component:HomeComponent},
   {path:"shopCart", component:ShopCartComponent},
   {path:"itemView", component:ItemViewComponent},
   {path:"pedidos", component:PedidosComponent},

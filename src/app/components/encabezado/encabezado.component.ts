@@ -17,7 +17,7 @@ export class EncabezadoComponent implements OnInit {
   }
 
   loguear(){
-    this.firebaseServ.logueo().then((result) => {
+    this.firebaseServ.logueo().then((result:any) => {
       debugger
       document.getElementById("usrImg").style.display = "inline";  
       var user = result.user;

@@ -49,7 +49,6 @@ export class FirebaseService {
   }
 
   ordenarPedido(carrito:carritoCompra, direccion:string, celular:string){
-   
     let pedido:pedido = {
       carrito: carrito, 
       direccion: direccion,
@@ -63,12 +62,17 @@ export class FirebaseService {
     this.db.collection('carritoDeCompra').doc(this.userUid).delete();
   }
 
-  storeImg(file:File):firebase.storage.UploadTask{
-    return firebase.storage().ref().child('Productos/'+file.name).put(file);
+  storeImg(file:File){
+    return firebase.storage().ref().child('Productos/'+file.name).put(file)
+  }
+
+  getImg(file:File){
+    return firebase.storage().ref().child('Productos/'+file.name).getDownloadURL()
   }
 
   agregarProducto(producto: productoBD){
     debugger
+    return this.db.collection('productos').add(producto).then(()=> Swal.fire('El producto a sido agregado exitosamente'))
   }
 }
 

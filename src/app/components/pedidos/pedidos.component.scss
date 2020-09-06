@@ -1,7 +1,7 @@
 .pedidos{
     margin-top: 5ch;
-    height: 300px;
-    width: 1000px;
+    height: 500px;
+    width: 500px;
 }
 
 .pedido{
@@ -9,5 +9,12 @@
     border: 2px solid pink;
     border-radius: 3em;
     padding: 30px;
+}
+
+#page-container {
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;  
 }
 
