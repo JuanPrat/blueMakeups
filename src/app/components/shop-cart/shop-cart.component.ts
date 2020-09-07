@@ -15,6 +15,7 @@ export class ShopCartComponent implements OnInit {
   carrito:carritoCompra = new carritoCompra();
   formulario:FormGroup;
   done = false;
+  carritoVacio = true;
 
   constructor(private firebaseService:FirebaseService,
      private localStorage:LocalStorageService,
@@ -26,6 +27,7 @@ export class ShopCartComponent implements OnInit {
     .subscribe((productosEnCarrito:carritoCompra) => {
       debugger
         this.carrito = productosEnCarrito;
+        this.carritoVacio = this.carrito.listaProductos == undefined ? true : false;
       });      
   }
 
